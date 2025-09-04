@@ -11,12 +11,13 @@ import { CommonModule } from '@angular/common';
     <nav>
       <div>
         <a routerLink="/">TMS</a>
-      </div>
-      <div class="nav-right" *ngIf="auth.user$ | async as user; else guest">
-        <span class="role-pill">{{ user.role }}</span>
-        <span>{{ user.username }}</span>
-        <button class="ghost" (click)="logout()">Logout</button>
-      </div>
+      </div><br>
+     <div class="nav-right" *ngIf="auth.auth$ | async as user; else guest">
+  <span class="role-pill">{{ user?.role }}</span>
+  <span>{{ user?.username }}</span>
+  <button class="ghost" (click)="logout()">Logout</button>
+</div>
+
       <ng-template #guest>
         <div class="nav-right">
           <a routerLink="/auth/login">Login</a>

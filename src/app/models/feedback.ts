@@ -1,7 +1,8 @@
 export interface Feedback {
   feedbackId?: number;
-  userId: number;
-  batchId: number;
-  rating: number;
   feedbackText: string;
+  rating: number;
+  submittedOn?: string;
+  batchId: number;
+  userId: number;
 }
